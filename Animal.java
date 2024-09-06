@@ -1,3 +1,5 @@
+
+
 package Wildlife_Habitat_Simulation_Anuj_Squad_47;
 public class Animal {
     // Attributes (Encapsulated properties)
