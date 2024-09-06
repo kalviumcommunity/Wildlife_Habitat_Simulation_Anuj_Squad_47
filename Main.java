@@ -6,6 +6,7 @@ public class Main {
         Habitat savanna = new Habitat("Savanna", 500);
 
         
+        
         lion.displayAnimalInfo();
         lion.makeSound();
 
