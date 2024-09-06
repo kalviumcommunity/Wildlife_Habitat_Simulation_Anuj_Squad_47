@@ -1,18 +1,32 @@
 package Wildlife_Habitat_Simulation_Anuj_Squad_47;
 public class Main {
     public static void main(String[] args) {
-        // Creating an instance of Animal
+        
         Animal lion = new Animal("Lion", "Carnivore");
         lion.displayAnimalInfo();
 
-        // Using the 'this' pointer to chain method calls
+        
         lion.changeType("Herbivore").displayAnimalInfo();
 
-        // Creating an instance of Habitat
+        
         Habitat savanna = new Habitat("Savanna", 500);
         savanna.displayHabitatInfo();
 
-        // Using 'this' for chaining in Habitat
+        
         savanna.changeAreaSize(1000).displayHabitatInfo();
+
+        
+        Animal[] animals = new Animal[3];
+        animals[0] = new Animal("Elephant", "Herbivore");
+        animals[1] = new Animal("Cheetah", "Carnivore");
+        animals[2] = new Animal("Giraffe", "Herbivore");
+
+        
+        System.out.println("\nArray of Animal Objects:");
+        for (Animal animal : animals) {
+            animal.displayAnimalInfo();
+            System.out.println("---------------------");
+        }
     }
 }
+
