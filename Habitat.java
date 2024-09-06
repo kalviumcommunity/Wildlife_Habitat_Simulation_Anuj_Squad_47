@@ -3,25 +3,23 @@
 package Wildlife_Habitat_Simulation_Anuj_Squad_47;
 // Class defining the habitat where animals live
 public class Habitat {
-    // Attributes
     private String environmentType;
     private int areaSize;
 
-    // Constructor
+    // Constructor using 'this' to distinguish between parameters and class attributes
     public Habitat(String environmentType, int areaSize) {
         this.environmentType = environmentType;
         this.areaSize = areaSize;
     }
 
-    // Member function 1: Display habitat details
-    public void displayHabitatInfo() {
-        System.out.println("Habitat Type: " + environmentType);
-        System.out.println("Habitat Size: " + areaSize + " acres");
+    // Method using 'this' to return the current object
+    public Habitat changeAreaSize(int newAreaSize) {
+        this.areaSize = newAreaSize;  // 'this' refers to the current object's areaSize
+        return this;                  // Returning 'this' for method chaining
     }
 
-    // Member function 2: Simulate change in environment
-    public void changeEnvironment(String newEnvironment) {
-        this.environmentType = newEnvironment;
-        System.out.println("The environment has changed to: " + newEnvironment);
+    public void displayHabitatInfo() {
+        System.out.println("Habitat Type: " + this.environmentType);
+        System.out.println("Habitat Size: " + this.areaSize + " acres");
     }
 }
