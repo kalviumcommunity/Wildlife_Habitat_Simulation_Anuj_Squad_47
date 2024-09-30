@@ -23,6 +23,10 @@ class Animal {
         return this;
     }
 
+    // Static method to return the total number of animals created
+    public static int getTotalAnimals() {
+        return totalAnimals;
+    }
 }
 
 class Habitat {
@@ -50,6 +54,10 @@ class Habitat {
         return this;
     }
 
+    // Static method to return the total habitat area
+    public static int getTotalHabitatArea() {
+        return totalHabitatArea;
+    }
 }
 
 public class Main {
@@ -71,7 +79,8 @@ public class Main {
             System.out.println("---------------------");
         }
 
-        
+        // Display total number of animals created
+        System.out.println("Total number of animals: " + Animal.getTotalAnimals());
 
         // Creating habitats
         Habitat savanna = new Habitat("Savanna", 500);
@@ -79,6 +88,7 @@ public class Main {
 
         savanna.changeAreaSize(1000).displayHabitatInfo();
 
-        
+        // Display total habitat area
+        System.out.println("Total habitat area: " + Habitat.getTotalHabitatArea() + " sq meters");
     }
 }
