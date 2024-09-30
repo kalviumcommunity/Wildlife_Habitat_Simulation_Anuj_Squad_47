@@ -16,10 +16,13 @@ public class Main {
         savanna.changeAreaSize(1000).displayHabitatInfo();
 
         
-        Animal[] animals = new Animal[3];
+        Animal[] animals = new Animal[5];
         animals[0] = new Animal("Elephant", "Herbivore");
         animals[1] = new Animal("Cheetah", "Carnivore");
         animals[2] = new Animal("Giraffe", "Herbivore");
+        animals[3] = new Animal("Lion", "Carnivore");
+        animals[4] = new Animal("Zebra", "Herbivore");
+
 
         
         System.out.println("\nArray of Animal Objects:");
