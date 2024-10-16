@@ -1,77 +1,22 @@
 package Wildlife_Habitat_Simulation_Anuj_Squad_47;
 
-class Animal {
-    private String name;
-    private String type;
-    
-    // Static variable to count the total number of animals
-    private static int totalAnimals = 0;
-
-    // Constructor
-    public Animal(String name, String type) {
-        this.name = name;
-        this.type = type;
-        totalAnimals++; // Increment the static variable each time an animal is created
-    }
-
-    public void displayAnimalInfo() {
-        System.out.println("Animal: " + name + ", Type: " + type);
-    }
-
-    public Animal changeType(String newType) {
-        this.type = newType;
-        return this;
-    }
-
-    // Static method to return the total number of animals created
-    public static int getTotalAnimals() {
-        return totalAnimals;
-    }
-}
-
-class Habitat {
-    private String name;
-    private int areaSize;
-
-    // Static variable to keep track of total habitat area across all objects
-    private static int totalHabitatArea = 0;
-
-    // Constructor
-    public Habitat(String name, int areaSize) {
-        this.name = name;
-        this.areaSize = areaSize;
-        totalHabitatArea += areaSize; // Add area to static variable
-    }
-
-    public void displayHabitatInfo() {
-        System.out.println("Habitat: " + name + ", Area Size: " + areaSize + " sq meters");
-    }
-
-    public Habitat changeAreaSize(int newAreaSize) {
-        totalHabitatArea -= this.areaSize; // Subtract the old area
-        this.areaSize = newAreaSize;
-        totalHabitatArea += newAreaSize; // Add the new area
-        return this;
-    }
-
-    // Static method to return the total habitat area
-    public static int getTotalHabitatArea() {
-        return totalHabitatArea;
-    }
-}
-
 public class Main {
     public static void main(String[] args) {
-        // Creating animals
-        Animal lion = new Animal("Lion", "Carnivore");
+        // Creating animals with encapsulation
+        Animal lion = new Animal("Lion", "Carnivore", 5, 15);
         lion.displayAnimalInfo();
 
-        lion.changeType("Herbivore").displayAnimalInfo();
+        // Changing animal properties using setters
+        lion.setType("Herbivore");
+        lion.setAge(6);
+        lion.displayAnimalInfo();
 
-        Animal[] animals = new Animal[3];
-        animals[0] = new Animal("Elephant", "Herbivore");
-        animals[1] = new Animal("Cheetah", "Carnivore");
-        animals[2] = new Animal("Giraffe", "Herbivore");
+        Animal[] animals = new Animal[5];
+        animals[0] = new Animal("Elephant", "Herbivore", 10, 70);
+        animals[1] = new Animal("Cheetah", "Carnivore", 3, 12);
+        animals[2] = new Animal("Giraffe", "Herbivore", 7, 25);
+        animals[3] = new Animal("Lion", "Carnivore", 5, 15);
+        animals[4] = new Animal("Zebra", "Herbivore", 4, 25);
 
         System.out.println("\nArray of Animal Objects:");
         for (Animal animal : animals) {
@@ -80,13 +25,16 @@ public class Main {
         }
 
         // Display total number of animals created
-        System.out.println("Total number of animals: " + Animal.getTotalAnimals());
+        System.out.println("Total Animals: " + Animal.getTotalAnimals());
 
-        // Creating habitats
+        // Creating habitats with encapsulation
         Habitat savanna = new Habitat("Savanna", 500);
         savanna.displayHabitatInfo();
 
-        savanna.changeAreaSize(1000).displayHabitatInfo();
+        // Changing habitat properties using setters
+        savanna.setAreaSize(1000);
+        savanna.setName("Expanded Savanna");
+        savanna.displayHabitatInfo();
 
         // Display total habitat area
         System.out.println("Total habitat area: " + Habitat.getTotalHabitatArea() + " sq meters");
