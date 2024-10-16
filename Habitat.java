@@ -1,6 +1,7 @@
 package Wildlife_Habitat_Simulation_Anuj_Squad_47;
 
 class Habitat {
+    // Private fields, hidden from outside access (Abstraction)
     private String name;
     private int areaSize;
 
@@ -14,7 +15,7 @@ class Habitat {
         totalHabitatArea += areaSize; // Add area to static variable
     }
 
-    // Accessor methods (getters)
+    // Public methods to allow controlled access to habitat name and area size (Abstraction)
     public String getName() {
         return name;
     }
@@ -23,7 +24,7 @@ class Habitat {
         return areaSize;
     }
 
-    // Mutator methods (setters)
+    // Public methods to allow controlled modification of fields (Abstraction)
     public void setName(String name) {
         this.name = name;
     }
@@ -34,12 +35,25 @@ class Habitat {
         totalHabitatArea += areaSize; // Add new area size
     }
 
-    public void displayHabitatInfo() {
-        System.out.println("Habitat: " + name + ", Area Size: " + areaSize + " sq meters");
+    // Private method to display internal calculations
+    private void calculateExpansion() {
+        System.out.println("Calculating potential habitat expansion...");
+    }
+
+    // Public method to trigger internal logic (Abstraction)
+    public void expandHabitat(int extraArea) {
+        calculateExpansion(); // Call private method inside a public method (Abstraction)
+        setAreaSize(this.areaSize + extraArea);
+        System.out.println("Habitat expanded by " + extraArea + " sq meters. New area: " + this.areaSize);
     }
 
     // Static method to return the total habitat area
     public static int getTotalHabitatArea() {
         return totalHabitatArea;
+    }
+
+    // Public method to display habitat info
+    public void displayHabitatInfo() {
+        System.out.println("Habitat: " + name + ", Area Size: " + areaSize + " sq meters");
     }
 }

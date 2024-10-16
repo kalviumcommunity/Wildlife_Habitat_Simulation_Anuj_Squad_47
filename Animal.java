@@ -1,6 +1,7 @@
 package Wildlife_Habitat_Simulation_Anuj_Squad_47;
 
 class Animal {
+    // Private fields, hidden from outside classes (Abstraction)
     private String name;
     private String type;
     private int age;
@@ -18,7 +19,7 @@ class Animal {
         totalAnimals++; // Increment the static variable each time an animal is created
     }
 
-    // Accessor methods (getters)
+    // Public getter methods to allow controlled access (Abstraction)
     public String getName() {
         return name;
     }
@@ -35,7 +36,7 @@ class Animal {
         return lifespan;
     }
 
-    // Mutator methods (setters)
+    // Public setter methods to allow controlled modification (Abstraction)
     public void setName(String name) {
         this.name = name;
     }
@@ -52,12 +53,24 @@ class Animal {
         this.lifespan = lifespan;
     }
 
-    public void displayAnimalInfo() {
-        System.out.println("Animal: " + name + ", Type: " + type + ", Age: " + age + ", Lifespan: " + lifespan);
+    // Private method (hidden detail) to manage internal logic
+    private void ageOneYear() {
+        this.age++;
+    }
+
+    // Public method to interact with internal details
+    public void growOlder() {
+        ageOneYear(); // Using private method inside a public method (Abstraction)
+        System.out.println(name + " is now " + age + " years old.");
     }
 
     // Static method to return the total number of animals created
     public static int getTotalAnimals() {
         return totalAnimals;
+    }
+
+    // Public method to display animal info
+    public void displayAnimalInfo() {
+        System.out.println("Animal: " + name + ", Type: " + type + ", Age: " + age + ", Lifespan: " + lifespan);
     }
 }
