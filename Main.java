@@ -2,13 +2,14 @@ package Wildlife_Habitat_Simulation_Anuj_Squad_47;
 
 public class Main {
     public static void main(String[] args) {
-        // Creating animals with encapsulation
+        // Creating animals with encapsulation and abstraction
         Animal lion = new Animal("Lion", "Carnivore", 5, 15);
         lion.displayAnimalInfo();
 
-        // Changing animal properties using setters
+        // Accessing and modifying through public methods (Abstraction)
         lion.setType("Herbivore");
         lion.setAge(6);
+        lion.growOlder(); // Public method that internally calls a private method
         lion.displayAnimalInfo();
 
         Animal[] animals = new Animal[5];
@@ -27,12 +28,13 @@ public class Main {
         // Display total number of animals created
         System.out.println("Total Animals: " + Animal.getTotalAnimals());
 
-        // Creating habitats with encapsulation
+        // Creating habitats with encapsulation and abstraction
         Habitat savanna = new Habitat("Savanna", 500);
         savanna.displayHabitatInfo();
 
-        // Changing habitat properties using setters
+        // Modifying and expanding the habitat through public methods (Abstraction)
         savanna.setAreaSize(1000);
+        savanna.expandHabitat(200); // Public method that internally calls a private method
         savanna.setName("Expanded Savanna");
         savanna.displayHabitatInfo();
 
