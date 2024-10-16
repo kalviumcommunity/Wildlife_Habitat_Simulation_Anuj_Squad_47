@@ -1,25 +1,45 @@
-
-
 package Wildlife_Habitat_Simulation_Anuj_Squad_47;
-// Class defining the habitat where animals live
-public class Habitat {
-    private String environmentType;
+
+class Habitat {
+    private String name;
     private int areaSize;
 
-    // Constructor using 'this' to distinguish between parameters and class attributes
-    public Habitat(String environmentType, int areaSize) {
-        this.environmentType = environmentType;
+    // Static variable to keep track of total habitat area across all objects
+    private static int totalHabitatArea = 0;
+
+    // Constructor
+    public Habitat(String name, int areaSize) {
+        this.name = name;
         this.areaSize = areaSize;
+        totalHabitatArea += areaSize; // Add area to static variable
     }
 
-    // Method using 'this' to return the current object
-    public Habitat changeAreaSize(int newAreaSize) {
-        this.areaSize = newAreaSize;  // 'this' refers to the current object's areaSize
-        return this;                  // Returning 'this' for method chaining
+    // Accessor methods (getters)
+    public String getName() {
+        return name;
+    }
+
+    public int getAreaSize() {
+        return areaSize;
+    }
+
+    // Mutator methods (setters)
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAreaSize(int areaSize) {
+        totalHabitatArea -= this.areaSize; // Subtract old area size
+        this.areaSize = areaSize;
+        totalHabitatArea += areaSize; // Add new area size
     }
 
     public void displayHabitatInfo() {
-        System.out.println("Habitat Type: " + this.environmentType);
-        System.out.println("Habitat Size: " + this.areaSize + " acres");
+        System.out.println("Habitat: " + name + ", Area Size: " + areaSize + " sq meters");
+    }
+
+    // Static method to return the total habitat area
+    public static int getTotalHabitatArea() {
+        return totalHabitatArea;
     }
 }
