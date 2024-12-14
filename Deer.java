@@ -9,4 +9,10 @@ class Deer extends Herbivore {
     public void sprint() {
         System.out.println("Deer is sprinting quickly to escape predators.");
     }
+
+    // Overriding the sound method to demonstrate polymorphism
+    @Override
+    public void sound() {
+        System.out.println("Deer makes a soft bleating sound.");
+    }
 }

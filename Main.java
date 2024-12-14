@@ -2,7 +2,7 @@ package Wildlife_Habitat_Simulation_Anuj_Squad_47;
 
 public class Main {
     public static void main(String[] args) {
-        // Creating animals with encapsulation methods
+        // Original code remains untouched
         Animal lion = new Animal("Lion", "Carnivore", 5, 15);
         lion.displayAnimalInfo();
 
@@ -21,27 +21,36 @@ public class Main {
             System.out.println("---------------------");
         }
 
-        // Display total number of animals created
         System.out.println("Total Animals: " + Animal.getTotalAnimals());
 
-        // Creating habitats
         Habitat savanna = new Habitat("Savanna", 500);
         savanna.displayHabitatInfo();
 
         savanna.changeAreaSize(1000).displayHabitatInfo();
 
-        // Display total habitat area
         System.out.println("Total habitat area: " + Habitat.getTotalHabitatArea() + " sq meters");
 
-        // Demonstrate single inheritance with Carnivore
         Carnivore lionCarnivore = new Carnivore("Lion", 5, 15);
         lionCarnivore.displayAnimalInfo();
         lionCarnivore.hunt();
 
-        // Demonstrate multilevel inheritance with Deer
         Deer deer = new Deer(3, 20);
         deer.displayAnimalInfo();
         deer.graze();
         deer.sprint();
+
+        // New polymorphism demonstration
+        System.out.println("\n--- Polymorphism Demonstration ---");
+
+        // Using overloaded constructors
+        Animal tiger = new Animal("Tiger", "Carnivore", 8, 20);
+        Animal rabbit = new Animal("Rabbit", "Herbivore"); // Overloaded constructor
+        tiger.displayAnimalInfo();
+        rabbit.displayAnimalInfo();
+
+        // Using overridden methods
+        deer.sound(); // Calls overridden method in Deer
+        Animal genericDeer = new Deer(4, 15);
+        genericDeer.sound(); // Calls overridden method due to dynamic binding
     }
 }

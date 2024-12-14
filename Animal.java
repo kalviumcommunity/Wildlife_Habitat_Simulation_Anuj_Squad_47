@@ -5,17 +5,22 @@ class Animal {
     private String type;
     private int age;
     private int lifespan;
-    
+
     // Static variable to count the total number of animals
     private static int totalAnimals = 0;
 
-    // Constructor with age and lifespan fields for Milestone 4
+    // Existing constructor
     public Animal(String name, String type, int age, int lifespan) {
         this.name = name;
         this.type = type;
         this.age = age;
         this.lifespan = lifespan;
-        totalAnimals++; // Increment the static variable each time an animal is created
+        totalAnimals++;
+    }
+
+    // New overloaded constructor
+    public Animal(String name, String type) {
+        this(name, type, 0, 0); // Default age and lifespan values
     }
 
     public void displayAnimalInfo() {
@@ -34,5 +39,10 @@ class Animal {
     // Static method to return the total number of animals created
     public static int getTotalAnimals() {
         return totalAnimals;
+    }
+
+    // Method for demonstrating method overriding
+    public void sound() {
+        System.out.println(name + " makes a generic animal sound.");
     }
 }
