@@ -52,5 +52,19 @@ public class Main {
         deer.sound(); // Calls overridden method in Deer
         Animal genericDeer = new Deer(4, 15);
         genericDeer.sound(); // Calls overridden method due to dynamic binding
+
+
+
+        System.out.println("\n--- Abstract Class and Virtual Function Demonstration ---");
+
+        AbstractAnimal lion1 = new AbstractLion(); // Polymorphic object
+        lion1.displayBasicInfo();
+        lion1.makeSound(); // Calls overridden method in AbstractLion
+
+        AbstractAnimal deer1 = new AbstractDeer(); // Polymorphic object
+        deer1.displayBasicInfo();
+        deer1.makeSound(); // Calls overridden method in AbstractDeer
+
+        System.out.println("\nAbstract classes and virtual functions allow flexible and reusable code!");
     }
 }
