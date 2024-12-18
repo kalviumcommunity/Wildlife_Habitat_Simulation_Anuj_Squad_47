@@ -24,5 +24,20 @@ public class Main {
 
         // Total animal count
         logger.log("Total Animals: " + Animal.getTotalAnimals());
+
+
+        Habitat savanna = new Habitat("Savanna", 500);
+        savanna.displayHabitatInfo();
+
+        // New Aquatic Habitat
+        AquaticHabitat ocean = new AquaticHabitat("Saltwater", 200);
+        ocean.displayDetails();
+
+        // Using the Displayable interface
+        Displayable[] habitats = { savanna, ocean };
+        System.out.println("\nDisplaying all habitats:");
+        for (Displayable habitat : habitats) {
+            habitat.displayDetails();
+        }
     }
 }
