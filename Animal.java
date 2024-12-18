@@ -18,22 +18,43 @@ class Animal {
         totalAnimals++;
     }
 
-    // New overloaded constructor
+    // Overloaded constructor with default age and lifespan
     public Animal(String name, String type) {
         this(name, type, 0, 0); // Default age and lifespan values
     }
 
-    public void displayAnimalInfo() {
-        System.out.println("Animal: " + name + ", Type: " + type + ", Age: " + age + ", Lifespan: " + lifespan);
-    }
-
-    public Animal changeType(String newType) {
-        this.type = newType;
-        return this;
+    // Getter methods
+    public String getName() {
+        return name;
     }
 
     public String getType() {
         return type;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public int getLifespan() {
+        return lifespan;
+    }
+
+    // Setter methods (if needed for future use)
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void setLifespan(int lifespan) {
+        this.lifespan = lifespan;
     }
 
     // Static method to return the total number of animals created
@@ -41,7 +62,13 @@ class Animal {
         return totalAnimals;
     }
 
-    // Method for demonstrating method overriding
+    // Demonstrating method chaining
+    public Animal changeType(String newType) {
+        this.type = newType;
+        return this;
+    }
+
+    // Demonstrating method overriding
     public void sound() {
         System.out.println(name + " makes a generic animal sound.");
     }
