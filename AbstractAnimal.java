@@ -1,6 +1,8 @@
 package Wildlife_Habitat_Simulation_Anuj_Squad_47;
 
 // Abstract class for demonstration of abstract classes and virtual functions
+
+
 abstract class AbstractAnimal {
     private String name;
     private String type;

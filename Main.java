@@ -55,6 +55,10 @@ public class Main {
 
 
 
+        
+        
+        
+        
         System.out.println("\n--- Abstract Class and Virtual Function Demonstration ---");
 
         AbstractAnimal lion1 = new AbstractLion(); // Polymorphic object
