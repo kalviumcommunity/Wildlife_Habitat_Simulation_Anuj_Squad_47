@@ -1,6 +1,6 @@
 package Wildlife_Habitat_Simulation_Anuj_Squad_47;
 
-class Habitat {
+class Habitat implements Displayable {
     private String name;
     private int areaSize;
 
@@ -28,5 +28,10 @@ class Habitat {
     // Static method to return the total habitat area
     public static int getTotalHabitatArea() {
         return totalHabitatArea;
+    }
+
+    @Override
+    public void displayDetails() {
+        System.out.println("Habitat Details: Name = " + name + ", Area = " + areaSize + " sq meters");
     }
 }
